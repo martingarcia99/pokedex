@@ -13,7 +13,7 @@ interface PokemonList {
 }
 
 export const useGetPokemonList = (param?: string) => {
-    const [url, setUrl] = useState(param != ' ' ? `${BASE_URL}/pokemon?limit=1000` : `${BASE_URL}/pokemon?limit=36`);
+    const [url, setUrl] = useState(param != null ? `${BASE_URL}/pokemon?limit=1000` : `${BASE_URL}/pokemon?limit=36`);
 
     const { data, isLoading, error } = useQuery<PokemonList>({
         queryKey: ['pokemonList', url],
