@@ -23,7 +23,7 @@ export const PokemonInfo = () => {
                         className="mx-auto w-72 h-72"
                     />
                 </div>
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-12">
                     <div className="flex">
                         <h1 className="text-3xl">{capitilizeFirstLetter(pokemonData?.name ?? '')}</h1>
                     </div>
