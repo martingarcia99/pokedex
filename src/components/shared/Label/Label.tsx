@@ -6,7 +6,7 @@ interface LabelProps{
 
 export const Label: React.FC<LabelProps> = ({ children }) => {
     return (
-        <div  className='w-24 h-12 rounded-full bg-white shadow-lg flex items-center justify-center'>
+        <div  className='w-auto px-5 h-12 rounded-full bg-black text-white shadow-lg flex items-center justify-center'>
             {children}
         </div>
     );

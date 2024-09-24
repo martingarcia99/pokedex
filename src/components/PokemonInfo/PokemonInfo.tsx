@@ -14,23 +14,27 @@ export const PokemonInfo = () => {
     const mainType = useMemo(() => pokemonData && getMainPokemonType(pokemonData), [pokemonData]);
 
     return (
-        <div className="flex flex-row justify-between shadow-lg bg-gray-100 rounded-lg">
-            <div className={`${mainType}-background w-72 h-72 rounded-l-lg items-center`}>
-                <img 
-                    src={pokemonData?.sprites?.front_default}
-                    alt={pokemonData?.name ?? ''}
-                    className="mx-auto w-72 h-72"
-                />
-            </div>
-            <div className="flex flex-col grow p-5 gap-3">
-                <div className="relative flex">
-                    <h1 className="text-3xl">{capitilizeFirstLetter(pokemonData?.name ?? '')}</h1>
-                    <TypeIcons types={pokemonData?.types ?? []} />
+        <div className="flex flex-col gap-10">
+            <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 relative">
+                <div className={`${mainType}-background w-72 h-72 rounded-l-lg items-center`}>
+                    <img 
+                        src={pokemonData?.sprites?.front_default}
+                        alt={pokemonData?.name ?? ''}
+                        className="mx-auto w-72 h-72"
+                    />
                 </div>
-                <span>{`Weight: ${convertLbsToKg(pokemonData?.weight ?? 0)} kg`}</span>
-                <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} cm`}</span>
-                <PokemonSprites pokemonName={pokemonName} />
+                <div className="flex flex-col gap-10">
+                    <div className="flex">
+                        <h1 className="text-3xl">{capitilizeFirstLetter(pokemonData?.name ?? '')}</h1>
+                    </div>
+                    <div className="flex flex-row gap-10">
+                        <span>{`Weight: ${convertLbsToKg(pokemonData?.weight ?? 0)} kg`}</span>
+                        <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} cm`}</span>
+                    </div>
+                </div>
+                <TypeIcons types={pokemonData?.types ?? []} />
             </div>
+            <PokemonSprites pokemonName={pokemonName} />
         </div>
     )
 }
