@@ -26,7 +26,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, pokemonId }) 
     }
     
     return (
-        <div className={`${mainType}-background relative h-56 rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 hover:shadow-md transition-all border-black border`}>
+        <div className={`${mainType}-background relative h-56 rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 hover:shadow-md transition-all border-black border`} data-testid='pokemon-card'>
             <FavoriteButton pokemonId={pokemonData?.id ?? 0} />
             <TypeIcons types={pokemonData?.types ?? []} />
             <div className='flex flex-col items-center mx-auto' onClick={onClick}>
