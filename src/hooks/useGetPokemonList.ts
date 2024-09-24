@@ -8,10 +8,12 @@ interface PokemonList {
     next: string | null;
     previous: string | null;
     results: PokemonListItem[];
+    param?: string
+    isSearch?: boolean;
 }
 
-export const useGetPokemonList = () => {
-    const [url, setUrl] = useState(`${BASE_URL}/pokemon?limit=36`);
+export const useGetPokemonList = (param?: string) => {
+    const [url, setUrl] = useState(param != ' ' ? `${BASE_URL}/pokemon?limit=1000` : `${BASE_URL}/pokemon?limit=36`);
 
     const { data, isLoading, error } = useQuery<PokemonList>({
         queryKey: ['pokemonList', url],
@@ -20,7 +22,9 @@ export const useGetPokemonList = () => {
             if(!response.ok) throw new Error('Network response was not ok');
             return response.json();
         }
-    })
+    });
+
+    const filteredPokemonList = param ? data?.results?.filter(pokemon => pokemon.name.startsWith(param!.toLowerCase())) : [];
 
     const goToNextPage = () => {
         if(data?.next) setUrl(data.next);
@@ -31,7 +35,7 @@ export const useGetPokemonList = () => {
     }
 
     return {
-        pokemonList: data?.results ?? [],
+        pokemonList: param ? filteredPokemonList : data?.results ?? [],
         isLoading,
         error: error?.message ?? null,
         goToNextPage: data?.next ? goToNextPage : undefined,

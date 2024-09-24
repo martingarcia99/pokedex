@@ -8,15 +8,15 @@ interface GridProps{
 
 export const Grid: React.FC<GridProps> = ({ children, goToPreviousPage, goToNextPage }) => (
     <div className='container mx-auto w-100'>
-        <div className='grid grid-cols-4 gap-3 mx-auto'>
+        <div className='grid grid-cols-4 gap-10 mx-auto'>
             {children}
         </div>
-        <div className='flex justify-center mt-4 gap-5'>
+        <div className='flex justify-center items-center mt-4 gap-5'>
             {goToPreviousPage && 
-                <button onClick={goToPreviousPage}>Previous</button>
+                <button className='text-white hover:text-white hover:bg-blue-400 p-2 bg-slate-950 rounded-lg' onClick={goToPreviousPage}>Previous</button>
             }
             {goToNextPage && 
-                <button onClick={goToNextPage}>Next</button>
+                <button className='text-white hover:text-white hover:bg-blue-400 p-2 bg-slate-950 rounded-lg' onClick={goToNextPage}>Next</button>
             }
         </div>
     </div>
