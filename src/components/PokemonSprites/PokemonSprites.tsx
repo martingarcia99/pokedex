@@ -9,7 +9,7 @@ export const PokemonSprites: React.FC<PokemonSpritesProps> = ({ pokemonName }) =
     const { pokemonData } = useGetPokemon(pokemonName);
 
     return (
-        <div className="flex flex-row justify-between gap-10">
+        <div className="flex flex-row justify-between gap-10" data-testid='pokemon-sprites'>
             {pokemonData?.sprites?.front_default && <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 w-full p-10 justify-between">
                 <h6 className="text-2xl text-center">Normal</h6>
                 <div className="flex flex-row gap-3">

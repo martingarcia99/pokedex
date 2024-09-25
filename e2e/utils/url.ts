@@ -1,0 +1,1 @@
+export const url = process.env.NODE_ENV === 'production' ? "https://pokedex-drab-pi.vercel.app/" : "http://localhost:8080/";

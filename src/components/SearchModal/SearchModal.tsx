@@ -29,6 +29,7 @@ const SearchModal: React.FC = () => {
                 value={filter}
                 onChange={handleInputChange}
                 className="border p-2 w-full"
+                data-testid='search-input'
             />
             <div className="flex flex-row gap-5 flex-wrap justify-center overflow-y-auto">
                 {currentSearch && pokemonList?.map((pokemon) => (

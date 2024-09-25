@@ -15,7 +15,7 @@ export const PokemonInfo = () => {
 
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 relative">
+            <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 relative" data-testid='pokemon-info'>
                 <div className={`${mainType}-background w-72 h-72 rounded-l-lg items-center`}>
                     <img 
                         src={pokemonData?.sprites?.front_default}
