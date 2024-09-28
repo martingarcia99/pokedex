@@ -9,10 +9,10 @@ export const PokemonSprites: React.FC<PokemonSpritesProps> = ({ pokemonName }) =
     const { pokemonData } = useGetPokemon(pokemonName);
 
     return (
-        <div className="flex flex-row justify-between gap-10" data-testid='pokemon-sprites'>
-            {pokemonData?.sprites?.front_default && <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 w-full p-10 justify-between">
+        <div className="flex md:flex-row flex-col justify-between gap-10" data-testid='pokemon-sprites'>
+            {pokemonData?.sprites?.front_default && <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 w-full p-3 justify-around">
                 <h6 className="text-2xl text-center">Normal</h6>
-                <div className="flex flex-row gap-3">
+                <div className="flex md:flex-row flex-col gap-3">
                     <img
                         src={pokemonData?.sprites?.front_default}
                         alt={`${pokemonData?.name ?? ""} front default`}
@@ -25,9 +25,9 @@ export const PokemonSprites: React.FC<PokemonSpritesProps> = ({ pokemonName }) =
                     />
                 </div>
             </div>}
-            {pokemonData?.sprites?.front_shiny && <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 w-full p-10 justify-between">
+            {pokemonData?.sprites?.front_shiny && <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 w-full p-3 justify-around">
                 <h6 className="text-2xl text-center">Shiny</h6>
-                <div className="flex flex-row gap-3">
+                <div className="flex md:flex-row flex-col gap-3">
                     <img
                         src={pokemonData?.sprites?.front_shiny}
                         alt={`${pokemonData?.name ?? ""} front shiny`}

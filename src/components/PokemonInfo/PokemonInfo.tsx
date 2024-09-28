@@ -15,7 +15,7 @@ export const PokemonInfo = () => {
 
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex flex-row shadow-lg bg-gray-100 rounded-lg items-center gap-5 relative" data-testid='pokemon-info'>
+            <div className="flex md:flex-row flex-col shadow-lg bg-gray-100 rounded-lg items-center gap-5 relative" data-testid='pokemon-info'>
                 <div className={`${mainType}-background w-72 h-72 rounded-l-lg items-center`}>
                     <img 
                         src={pokemonData?.sprites?.front_default}
@@ -23,7 +23,7 @@ export const PokemonInfo = () => {
                         className="mx-auto w-72 h-72"
                     />
                 </div>
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col md:gap-12 gap-5 md:mb-0 mb-10 md:px-0 px-7">
                     <div className="flex">
                         <h1 className="text-3xl">{capitilizeFirstLetter(pokemonData?.name ?? '')}</h1>
                     </div>
