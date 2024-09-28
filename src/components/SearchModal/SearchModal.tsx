@@ -22,7 +22,7 @@ const SearchModal: React.FC = () => {
     }
 
     return (
-        <Modal isOpen={isOpen} onRequestClose={handleCloseModal} className={'w-2/4 max-h-[80vh] bg-white mx-auto p-5 mt-20 flex flex-col gap-5 items-center shadow-xl rounded-lg border border-black'}>
+        <Modal isOpen={isOpen} onRequestClose={handleCloseModal} className={'md:w-2/4 max-h-[80vh] bg-white mx-auto p-5 mt-20 flex flex-col gap-5 items-center shadow-xl rounded-lg border border-black'}>
             <h6 className="text-3xl">Search</h6>
             <input
                 type="text"
